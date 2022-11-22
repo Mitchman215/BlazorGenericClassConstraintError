@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+
+<!-- When the type is inferred, this component causes a CS0449 error -->
+<ClassConstraint Prop="MyClass"/>
+
+<!-- When the type is specified explictly, no error -->
+<ClassConstraint T="SomeClass" Prop="MyClass"/>
+
+
+<!-- Similar behavior when the constraint is a struct instead of class -->
+<StructConstraint Prop="MyStruct" />
+
+<StructConstraint T="SomeStruct" Prop="MyStruct" />
+
+
+@code {
+    SomeClass MyClass = new SomeClass();
+    SomeStruct MyStruct = new SomeStruct();
+}

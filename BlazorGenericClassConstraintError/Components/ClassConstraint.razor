@@ -1,0 +1,8 @@
+﻿@typeparam T where T : class, ISomeInterface
+
+<h3>ClassConstraint</h3>
+
+@code {
+    [Parameter]
+    public T Prop { get; set; }
+}
